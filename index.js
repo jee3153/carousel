@@ -1,6 +1,5 @@
 const slides = document.querySelectorAll(".slick-slide")
-const loaders = document.querySelectorAll(".loader")
-const prevArrow = document.querySelector("slick-prev")
+const loader = document.querySelector(".loader")
 
 // settings
 $(document).ready(function () {
@@ -10,6 +9,7 @@ $(document).ready(function () {
     responsive: true,
     slidesToShow: 1,
     arrows: true,
+    lazyLoad: "ondemand",
   })
 })
 
@@ -20,9 +20,8 @@ $(".carousel").on("beforeChange", function (
   currentSlide,
   nextSlide
 ) {
-  let next = slides[nextSlide]
-  let content = next.childNodes[0]
-  let loader = next.childNodes[1]
+  const next = slides[nextSlide]
+  const content = next.childNodes[0]
 
   loader.style.visibility = "visible"
   content.style.visibility = "hidden"
