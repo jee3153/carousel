@@ -37,3 +37,6 @@ body {
 .slick-slide {
   position: relative;
 }
+.slick-slide:focus {
+  outline: none;
+}
